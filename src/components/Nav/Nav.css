@@ -1,0 +1,106 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav-logo {
+  height: 50px;
+  max-width: 100%;
+  z-index: 100;
+  transition: transform 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 900;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #f4ce14;
+}
+
+/* Hamburguer Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 100;
+  position: relative; /* Añadido */
+}
+
+.hamburger svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #333;
+  transition: transform 0.3s;
+}
+
+/* Estilos para móvil */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease-in-out;
+    z-index: 90;
+    padding-top: 5rem;
+    overflow-y: auto; 
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .navbar.menu-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem 5%;
+    box-shadow: none;
+    z-index: 95;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .hamburger.active svg {
+    transform: rotate(90deg);
+  }
+  
+  .navbar {
+    padding: 1rem 5%;
+  }
+}
