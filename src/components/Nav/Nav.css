@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 10%;
+  padding: 1rem 7%;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -18,7 +18,7 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
 }
 

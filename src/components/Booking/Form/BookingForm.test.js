@@ -48,21 +48,21 @@ describe('BookingForm', () => {
     await userEvent.clear(guestsInput);
     await userEvent.type(guestsInput, '0');
     await userEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
-    expect(await screen.findByText(/please enter a number between 1 and 20/i)).toBeInTheDocument();
+    expect(await screen.findByText(/please enter a number between 1 and 12/i)).toBeInTheDocument();
     
     // Test invalid value (empty)
     await userEvent.clear(guestsInput);
     await userEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
-    expect(await screen.findByText(/please enter a number between 1 and 20/i)).toBeInTheDocument();
+    expect(await screen.findByText(/please enter a number between 1 and 12/i)).toBeInTheDocument();
     
     // Test valid value
     await userEvent.clear(guestsInput);
     await userEvent.type(guestsInput, '4');
-    expect(screen.queryByText(/please enter a number between 1 and 20/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/please enter a number between 1 and 12/i)).not.toBeInTheDocument();
     
     // Verify error doesn't appear when submitting valid value
     await userEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
-    expect(screen.queryByText(/please enter a number between 1 and 20/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/please enter a number between 1 and 12/i)).not.toBeInTheDocument();
   });
 
   test('submits form with valid data', async () => {

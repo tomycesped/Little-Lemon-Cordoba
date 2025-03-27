@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
-import { ReactComponent as Hamburger } from "../../assets/🦆 icon _hamburger menu.svg";
+import { ReactComponent as Hamburger } from "../../assets/🦆 icon _hamburger menu_.svg";
 import "./Nav.css";
 
 const Nav = () => {

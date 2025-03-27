@@ -5,16 +5,21 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <img src={logo} alt="Little Lemon logo" className="footer-logo" />
+      <div className="footer-logo-container">
+        <img src={logo} alt="Little Lemon logo" className="footer-logo" />
+        <p>Authentic Mediterranean cuisine</p>
+        <p>By @tomcesped</p>
+      </div>
+
       <div className="footer-section">
-        <h4>Doormat Navigation</h4>
+        <h4>Navigation</h4>
         <ul>
           <li><a href="/home">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="/reservations">Reservations</a></li>
-          <li><a href="/order">Order Online</a></li>
-          <li><a href="/login">Login</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Menu</a></li>
+          <li><a href="/booking">Reservations</a></li>
+          <li><a href="/">Order Online</a></li>
+          <li><a href="/">Login</a></li>
         </ul>
       </div>
 
@@ -23,16 +28,16 @@ const Footer = () => {
         <ul>
           <li>123 Lemon St, Chicago</li>
           <li>(312) 555-1234</li>
-          <li>contact@littlelemon.com</li>
+          <li>tomcesped7@gmail.com</li>
         </ul>
       </div>
 
       <div className="footer-section">
-        <h4>Social Media</h4>
+        <h4>Socials</h4>
         <ul>
-          <li><a href="https://facebook.com">Facebook</a></li>
-          <li><a href="https://twitter.com">Twitter</a></li>
-          <li><a href="https://instagram.com">Instagram</a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/tomycesped">Github</a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/tomcesped">Linkedin</a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://tomcesped.vercel.app">My Portfolio</a></li>
         </ul>
       </div>
     </footer>

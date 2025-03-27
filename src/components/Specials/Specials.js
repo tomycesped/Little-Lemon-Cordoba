@@ -1,25 +1,28 @@
 import React from "react";
 import "./Specials.css";
-import greekSalad from  "../../assets/greek salad.jpg";
+import bruschetta from "../../assets/bruchetta.jpg";
+import lemonDessert from "../../assets/lemon dessert.jpg";
+import greekSalad from "../../assets/ensaladagriega.jpg";
+import { MdDeliveryDining } from "react-icons/md";
 
 const Specials = () => {
   const specials = [
     {
       id: 1,
-      title: "Greek Salad",
-      price: "$12.99",
-      description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      image: greekSalad
+      title: "Bruschetta",
+      price: "$8.99",
+      description: "Our bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil, topped with fresh tomatoes and basil.",
+      image: bruschetta
     },
     {
-      id: 1,
-      title: "Greek Salad",
-      price: "$12.99",
-      description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      image: greekSalad
+      id: 2,
+      title: "Lemon Dessert",
+      price: "$6.99",
+      description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
+      image: lemonDessert
     },
     {
-      id: 1,
+      id: 3,
       title: "Greek Salad",
       price: "$12.99",
       description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
@@ -43,7 +46,7 @@ const Specials = () => {
                 <span className="price">{item.price}</span>
               </div>
               <p>{item.description}</p>
-              <button className="btn-order">Order for Delivery</button>
+              <button className="btn-order">Order for Delivery <MdDeliveryDining className="delivery-icon"/></button>
             </div>
           </div>
         ))}

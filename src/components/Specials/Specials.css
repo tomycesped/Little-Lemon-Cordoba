@@ -26,7 +26,17 @@
   border-radius: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #495E57;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
 }
 
 .specials-grid {
@@ -73,13 +83,38 @@
 }
 
 .btn-order {
-  background: none;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #F4CE14;
   color: #333;
+  border: none;
+  border-radius: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  font-size: 0.9rem;
 }
+
+.btn-order:hover {
+  background-color: #495E57;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-order:active {
+  transform: translateY(0);
+}
+
+.delivery-icon {
+  font-size: 1.1rem;
+  margin: 0 4px;
+}
+
+/* Resto de tus estilos existentes... */
 
 @media (max-width: 768px) {
   .specials {

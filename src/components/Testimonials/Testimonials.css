@@ -12,10 +12,35 @@
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Pantallas medianas: 2 arriba, 1 abajo centrado */
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonial-card:nth-child(3) {
+    grid-column: span 2;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Móviles: una columna */
+@media (max-width: 600px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial-card:nth-child(3) {
+    grid-column: span 1;
+    max-width: 100%;
+  }
 }
 
 .testimonial-card {
@@ -58,10 +83,4 @@
 .testimonial-card p {
   font-style: italic;
   color: #555;
-}
-
-@media (max-width: 768px) {
-  .testimonials {
-    padding: 2rem 5%;
-  }
 }
