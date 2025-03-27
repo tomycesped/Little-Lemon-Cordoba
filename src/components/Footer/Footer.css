@@ -1,7 +1,7 @@
 .footer {
   background-color: #34433e;
   color: white;
-  padding: 2rem 10%;
+  padding: 0.5rem 10% 1.5rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -109,7 +109,7 @@
 
 @media (max-width: 1024px) {
   .footer {
-    padding: 2rem 5%;
+    padding: 0.5rem 5% 1rem;
   }
   
   .footer-content {

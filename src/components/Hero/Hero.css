@@ -58,12 +58,12 @@
 
 .hero-image {
   width: clamp(250px, 30vw, 350px);
-  height: clamp(300px, 40vw, 380px);
+  height: clamp(320px, 45vw, 390px);
   border-radius: 16px;
   overflow: hidden;
   position: absolute;
   right: 10%;
-  bottom: -7%;
+  bottom: -5%;
   z-index: 1;
 }
 
@@ -84,7 +84,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 794px) {
   .hero {
     flex-direction: column;
     text-align: center;
