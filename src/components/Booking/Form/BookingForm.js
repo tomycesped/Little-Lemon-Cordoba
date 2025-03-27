@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
-import { ReservationContext } from '../../../context/ReservationContext';
+import React, { useState } from 'react';
 import './BookingForm.css';
+
 const BookingForm = () => {
-  const { availableTimes, dispatch } = useContext(ReservationContext);
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -10,12 +9,14 @@ const BookingForm = () => {
     const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
+
   const [date, setDate] = useState(getCurrentDate());
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState('1');
   const [occasion, setOccasion] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const generateAvailableTimes = () => {
     const times = [];
     for (let hour = 18; hour <= 23; hour++) {
@@ -23,43 +24,62 @@ const BookingForm = () => {
     }
     return times;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
+    
     if (!date) newErrors.date = 'Date is required';
     if (!time) newErrors.time = 'Time is required';
     if (!guests || isNaN(guests) || Number(guests) < 1 || Number(guests) > 12) {
       newErrors.guests = 'Please enter a number between 1 and 12';
     }
+    
     setErrors(newErrors);
+    
     if (Object.keys(newErrors).length === 0) {
-      console.log("Reservation submitted:", { date, time, guests: Number(guests), occasion });
+      console.log("Reservation submitted:", { 
+        date, 
+        time, 
+        guests: Number(guests),
+        occasion 
+      });
+      
+      // Reset form
       setDate(getCurrentDate());
       setTime('');
       setGuests('1');
       setOccasion('');
       setErrors({});
       setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
+      
+      // Hide success message after 3 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
     }
   };
+
   const handleGuestsChange = (e) => {
     const value = e.target.value;
     setGuests(value);
+    
     if (errors.guests && value && !isNaN(value) && Number(value) >= 1 && Number(value) <= 12) {
       setErrors(prev => ({ ...prev, guests: undefined }));
     }
   };
+
   return (
     <form className="reservation-form" onSubmit={handleSubmit} noValidate aria-labelledby="reservation-heading">
       {isSubmitted && (
         <section aria-live="polite" className="success-message">
-          ¡Reserva enviada con éxito! Pronto nos contactaremos contigo.
+          Reservation confirmed! We'll be in touch shortly.
         </section>
       )}
+      
       <h2 id="reservation-heading" className="visually-hidden">Reservation Form</h2>
+      
       <fieldset>
         <legend className="visually-hidden">Reservation Details</legend>
+        
         <div className="form-group">
           <label htmlFor="res-date">
             Choose date <span className="required-indicator">*</span>
@@ -77,6 +97,7 @@ const BookingForm = () => {
           />
           {errors.date && <p id="date-error" className="error" role="alert">{errors.date}</p>}
         </div>
+        
         <div className="form-group">
           <label htmlFor="res-time">
             Choose time <span className="required-indicator">*</span>
@@ -97,6 +118,7 @@ const BookingForm = () => {
           </select>
           {errors.time && <p id="time-error" className="error" role="alert">{errors.time}</p>}
         </div>
+        
         <div className="form-group">
           <label htmlFor="guests">
             Number of guests <span className="required-indicator">*</span>
@@ -116,6 +138,7 @@ const BookingForm = () => {
           />
           {errors.guests && <p id="guests-error" className="error" role="alert">{errors.guests}</p>}
         </div>
+        
         <div className="form-group">
           <label htmlFor="occasion">Occasion</label>
           <select 
@@ -132,6 +155,7 @@ const BookingForm = () => {
           <p id="occasion-help" className="help-text">Optional</p>
         </div>
       </fieldset>
+      
       <button 
         type="submit" 
         className="submit-btn"
@@ -142,4 +166,5 @@ const BookingForm = () => {
     </form>
   );
 };
+
 export default BookingForm;

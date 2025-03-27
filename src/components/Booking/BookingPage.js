@@ -34,7 +34,7 @@ const BookingPage = () => {
             <li>We hold reservations for 15 minutes past the booked time</li>
             <li>Large groups (12+ people) please call us directly</li>
             <li>Special dietary requirements can be noted when booking</li>
-            <li>Outdoor seating is available weather permitting</li>
+            <li>We offer outdoor seating when weather allows</li>
           </ul>
         </div>
       </div>

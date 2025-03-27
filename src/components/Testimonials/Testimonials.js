@@ -1,6 +1,6 @@
 import React from "react";
 import "./Testimonials.css";
-import roman from "../../assets/roman.jpg";
+import thomas from "../../assets/roman.jpg";
 import pablo from "../../assets/pablo.jpg";
 import selena from "../../assets/selena.jpg";
 
@@ -8,10 +8,10 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Román Guitart",
+      name: "Thomas Cespedes",
       rating: 5,
       review: "The bruschetta was absolutely divine! Perfectly crispy bread with the freshest toppings. I'll definitely be back!",
-      photo: roman
+      photo: thomas
     },
     {
       id: 2,
