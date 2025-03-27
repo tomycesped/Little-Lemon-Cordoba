@@ -26,7 +26,14 @@
   align-items: center;
 }
 
-#reservations-navbar {
+.reservation-item {
+  display: flex;
+}
+
+.reservation-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #f4ce14 0%, #ee9972 100%);
   color: #333 !important;
   padding: 0.5rem 1.5rem;
@@ -35,9 +42,13 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease !important;
+  text-decoration: none;
 }
 
-#reservations-navbar::before {
+.reservation-link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -51,11 +62,12 @@
   border-radius: 50px;
 }
 
-#reservations-navbar:hover {
+.reservation-link:hover {
   color: white !important;
+  text-decoration: none;
 }
 
-#reservations-navbar:hover::before {
+.reservation-link:hover::before {
   opacity: 1;
 }
 
@@ -155,6 +167,11 @@
   .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
   .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
   .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
+  
+  .reservation-link {
+    width: auto;
+    margin: 0 1rem;
+  }
   
   .navbar.menu-open {
     position: fixed;
