@@ -12,7 +12,6 @@
   height: 50px;
   max-width: 100%;
   z-index: 100;
-  transition: transform 0.3s;
 }
 
 .nav-links {
@@ -34,7 +33,6 @@
   color: #f4ce14;
 }
 
-/* Hamburguer Icon */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -42,7 +40,6 @@
   border: none;
   padding: 0.5rem;
   z-index: 100;
-  position: relative; /* Añadido */
 }
 
 .hamburger svg {
@@ -52,7 +49,6 @@
   transition: transform 0.3s;
 }
 
-/* Estilos para móvil */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -66,13 +62,13 @@
     height: 100vh;
     background-color: white;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 2rem;
     transform: translateY(-100%);
     transition: transform 0.2s ease-in-out;
     z-index: 90;
     padding-top: 5rem;
-    overflow-y: auto; 
+    overflow-y: auto;
   }
   
   .nav-links.active {
@@ -94,13 +90,5 @@
     overflow: hidden;
     position: fixed;
     width: 100%;
-  }
-  
-  .hamburger.active svg {
-    transform: rotate(90deg);
-  }
-  
-  .navbar {
-    padding: 1rem 5%;
   }
 }

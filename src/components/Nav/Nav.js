@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
 import { ReactComponent as Hamburger } from "../../assets/🦆 icon _hamburger menu_.svg";
+import { ReactComponent as CloseIcon } from "../../assets/close-x-svgrepo-com.svg";
 import "./Nav.css";
 
 const Nav = () => {
@@ -10,9 +11,9 @@ const Nav = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    document.body.classList.toggle('menu-open', !isOpen);
   };
 
-  // Cierra el menú al cambiar de ruta
   useEffect(() => {
     setIsOpen(false);
     document.body.classList.remove('menu-open');
@@ -29,7 +30,7 @@ const Nav = () => {
         onClick={toggleMenu}
         aria-label="Menu"
       >
-        <Hamburger />
+        {isOpen ? <CloseIcon /> : <Hamburger />}
       </button>
       
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
