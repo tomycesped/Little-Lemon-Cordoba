@@ -1,5 +1,3 @@
-/* Footer.css completo */
-
 .footer {
   background-color: #34433e;
   color: white;
@@ -109,7 +107,6 @@
   transform: translateX(5px);
 }
 
-/* Estilos responsive */
 @media (max-width: 1024px) {
   .footer {
     padding: 2rem 5%;
@@ -155,7 +152,6 @@
   }
 }
 
-/* Efectos especiales */
 .footer-section li {
   transition: transform 0.3s ease;
 }

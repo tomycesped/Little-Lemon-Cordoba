@@ -58,8 +58,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 2px solid white;
 }
-
-/* Efecto de superposición mejorado */
 .image1 {
   transform: rotate(-5deg);
 }

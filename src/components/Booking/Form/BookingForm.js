@@ -44,22 +44,16 @@ const BookingForm = () => {
         guests: Number(guests),
         occasion 
       });
-      
-      // Reset form
       setDate(getCurrentDate());
       setTime('');
       setGuests('1');
       setOccasion('');
       setErrors({});
       setIsSubmitted(true);
-      
-      // Scroll to top smoothly
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-      
-      // Hide success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
     }
   };

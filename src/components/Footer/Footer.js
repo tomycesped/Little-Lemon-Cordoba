@@ -5,7 +5,6 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* Header del footer con logo pequeño */}
       <div className="footer-header">
         <div className="footer-header-text">
           <div className="title">
@@ -15,8 +14,6 @@ const Footer = () => {
           <p className="subtitle">by @tomcesped</p>
         </div>
       </div>
-
-      {/* Contenido del footer (3 columnas) */}
       <div className="footer-content">
         <div className="footer-section">
           <h4>Navigation</h4>
