@@ -1,32 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
 import { ReactComponent as Hamburger } from "../../assets/🦆 icon _hamburger menu.svg";
 import "./Nav.css";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Cierra el menú al cambiar de ruta
   useEffect(() => {
-    // Añade/remueve la clase al body
-    if (isOpen) {
-      document.body.classList.add('menu-open');
-    } else {
-      document.body.classList.remove('menu-open');
-    }
-
-    // Limpia el efecto
-    return () => {
-      document.body.classList.remove('menu-open');
-    };
-  }, [isOpen]);
+    setIsOpen(false);
+    document.body.classList.remove('menu-open');
+  }, [location]);
 
   return (
     <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
-      <img src={logo} alt="Little Lemon logo" className="nav-logo" />
+      <Link to="/">
+        <img src={logo} alt="Little Lemon logo" className="nav-logo" />
+      </Link>
       
       <button 
         className={`hamburger ${isOpen ? "active" : ""}`} 
@@ -37,12 +33,12 @@ const Nav = () => {
       </button>
       
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-        <li><a href="/#home" onClick={() => setIsOpen(false)}>Home</a></li>
-        <li><a href="/#about" onClick={() => setIsOpen(false)}>About</a></li>
-        <li><a href="/#menu" onClick={() => setIsOpen(false)}>Menu</a></li>
-        <li><a href="/#reservations" onClick={() => setIsOpen(false)}>Reservations</a></li>
-        <li><a href="/#order" onClick={() => setIsOpen(false)}>Order Online</a></li>
-        <li><a href="/#login" onClick={() => setIsOpen(false)}>Login</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/#about">About</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/booking">Reservations</Link></li>
+        <li><Link to="/order">Order Online</Link></li>
+        <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>
   );

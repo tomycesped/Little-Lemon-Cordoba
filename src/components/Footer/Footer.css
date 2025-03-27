@@ -1,5 +1,5 @@
 .footer {
-  background-color: #495e57;
+  background-color: #34433e;
   color: white;
   padding: 4rem 10%;
   display: grid;
@@ -13,6 +13,8 @@
   height: 100px;
   margin-bottom: 1rem;
   max-width: 100%;
+  justify-self: center;
+
 }
 
 .footer-section {

@@ -1,0 +1,122 @@
+.reservation-form {
+  display: grid;
+  max-width: 300px;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.reservation-form label {
+  font-weight: bold;
+  color: #495e57;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reservation-form input,
+.reservation-form select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+  outline: 2px solid #f4ce14;
+  outline-offset: 2px;
+}
+
+.submit-btn {
+  background-color: #f4ce14;
+  color: #333;
+  padding: 12px;
+  border: none;
+  border-radius: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #495e57;
+  color: white;
+}
+
+.submit-btn:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de accesibilidad añadidos */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.required-indicator {
+  color: #d32f2f;
+}
+
+.help-text {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mejoras para invalid fields */
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: #d32f2f;
+}
+
+/* Estilos para el date picker */
+input[type="date"] {
+  appearance: none;
+  min-height: 38px;
+}
+
+/* Mejoras para móviles */
+@media (max-width: 400px) {
+  .reservation-form {
+    padding: 15px;
+    gap: 15px;
+  }
+}
