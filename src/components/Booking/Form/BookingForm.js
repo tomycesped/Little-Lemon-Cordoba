@@ -53,7 +53,13 @@ const BookingForm = () => {
       setErrors({});
       setIsSubmitted(true);
       
-      // Hide success message after 3 seconds
+      // Scroll to top smoothly
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Hide success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
     }
   };
