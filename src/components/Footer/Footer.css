@@ -1,7 +1,8 @@
+/* Footer.css */
 .footer {
   background-color: #34433e;
   color: white;
-  padding: 0.5rem 10% 1.5rem;
+  padding: 0rem 10% 1.5rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -11,7 +12,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid rgba(244, 206, 20, 0.2);
   margin-bottom: 2rem;
 }
@@ -30,6 +31,7 @@
 .footer-header-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .footer-header-text .title {
@@ -46,6 +48,7 @@
   font-size: 0.9rem;
   opacity: 0.8;
   text-align: center;
+  margin: 0.5rem 0;
 }
 
 .footer-content {
@@ -88,6 +91,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-section li:hover {
+  transform: translateX(5px);
 }
 
 .footer-section li::before {
@@ -109,7 +117,7 @@
 
 @media (max-width: 1024px) {
   .footer {
-    padding: 0.5rem 5% 1rem;
+    padding: 0 10% 1rem;
   }
   
   .footer-content {
@@ -150,12 +158,4 @@
   .footer-section li {
     font-size: 0.9rem;
   }
-}
-
-.footer-section li {
-  transition: transform 0.3s ease;
-}
-
-.footer-section li:hover {
-  transform: translateX(5px);
 }

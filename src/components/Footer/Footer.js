@@ -1,6 +1,8 @@
+// Footer.js
 import React from "react";
 import logo from "../../assets/logobien.png";
 import "./Footer.css";
+import logoblanco from "../../assets/logoblanco.png";
 
 const Footer = () => {
   return (
@@ -11,7 +13,19 @@ const Footer = () => {
             <img src={logo} alt="Little Lemon logo" className="footer-logo" />
             <span>Authentic Mediterranean cuisine</span>
           </div>
-          <p className="subtitle">by @tomcesped</p>
+          <p className="subtitle">website created by</p>
+          <a 
+            href="https://tomcesped.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img 
+              src={logoblanco} 
+              alt="Tom's logo" 
+              className="footer-logo" 
+              style={{ height: "35px", width: "auto" }}
+            />
+          </a>
         </div>
       </div>
       <div className="footer-content">
